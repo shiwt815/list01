@@ -17,8 +17,11 @@ console.log("测试打包js文件");
 console.log("测试打包es6转化");
 
 import Vue from "vue";
+import App from './App.vue';
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+import router from './router';
 import './a.css';
-import App from './App.vue'
 
 // new Vue({
 // 	   // el:'#app',
@@ -36,5 +39,6 @@ var vm = new Vue({
     //     return createElement(login)
     // }
     //简写
-    render:c=>c(App)
+    render:c=>c(App),
+    router
 })
