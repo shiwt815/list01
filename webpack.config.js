@@ -23,9 +23,23 @@ module.exports = {
 	    path: path.resolve(__dirname, 'dist'), // 打包文件的输出目录
 	    filename: 'bundle.js' // 打包后生产的 js 文件
    }, 
+   target:'web',
    devServer: {
+    // historyApiFallback: true,/不跳转
+    // hot: false,
+    inline: true, //实时刷新
+    open: true, // 自动拉起浏览器
+    hot: false, // 热加载 // true只更新修改的部分，而不是刷新整个页面
+    // grogress: true,
+
     port: 5000, // 本地服务器端口号
     contentBase:'./dist'//设置服务器访问的基本目录
+  },
+  //配置自带插件--watch的刷新频率
+  watchOptions: {
+    poll: 1000,//监测修改的时间(ms)
+    aggregateTimeout: 500,//防止重复按键，500毫秒内算按一次
+    ignored: /node_modules/,//不监测
   },
     //的main.js中引入了template，这种属于compiler模式  重新引用vue文件
     resolve: {
@@ -37,6 +51,7 @@ module.exports = {
     },
    plugins: [
   		new VueLoaderPlugin(),//vue-loade
+      new webpack.HotModuleReplacementPlugin(),  // 热更新插件
     	// new CleanWebpackPlugin(), // 默认情况下，此插件将删除 webpack output.path目录中的所有文件，以及每次成功重建后所有未使用的 webpack 资产。
    		new HtmlWebpackPlugin({
 		        // 打包输出HTML

@@ -15,6 +15,7 @@ arr.map(item => {
 
 console.log("测试打包js文件");
 console.log("测试打包es6转化");
+console.log("测试打包jihkhkjnj");
 
 import Vue from "vue";
 import App from './App.vue';
