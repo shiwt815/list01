@@ -1,12 +1,10 @@
 <template>
-	<div>
-			<tr>
-				<td>{{indexsort+1}}</td>
-				<td>{{content.nameValue}}</td>
-				<td>{{content.timeValue}}</td>
-				<td><button @click="del(indexsort)">操作</button></td>
-			</tr>
-	</div>
+	<tr>
+		<td>{{indexsort+1}}</td>
+		<td>{{content.nameValue}}</td>
+		<td>{{content.timeValue}}</td>
+		<td><button @click="del(indexsort)">操作</button></td>
+	</tr>
 </template>
 <script>
 	export default {

@@ -19,17 +19,8 @@ console.log("测试打包jihkhkjnj");
 
 import Vue from "vue";
 import App from './App.vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
 import router from './router';
 import './a.css';
-
-// new Vue({
-// 	   // el:'#app',
-//     // router: Router,
-//     // store: Store,
-//     render: h => h(App)
-//  }).$mount("#app");
 
 var vm = new Vue({
     el:'#app',
