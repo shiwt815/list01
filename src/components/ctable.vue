@@ -1,17 +1,21 @@
 <template>
 	<div>
 			<tr>
-				<td>{{indexsort}}</td>
+				<td>{{indexsort+1}}</td>
 				<td>{{content.nameValue}}</td>
 				<td>{{content.timeValue}}</td>
-				<td><button>操作</button></td>
+				<td><button @click="del(indexsort)">操作</button></td>
 			</tr>
 	</div>
 </template>
 <script>
 	export default {
 	  name: 'app',
-  	  props:['content',"index"],
-	 
+  	  props:['content',"indexsort"],
+	  methods:{
+	  	del:function(){
+			this.$emit("zdel", this.indexsort)
+	  	}
+	  }
 	}
 </script>
