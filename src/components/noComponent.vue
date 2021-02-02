@@ -17,7 +17,7 @@
 				<th>操作</th>
 			</tr>
 			<tr v-for="(item, index) of list" :key="index">
-				<td>{{index+1}}</td>
+				<td>{{index+1}}</td> 
 				<td>{{item.nameValue}}</td>
 				<td>{{item.timeValue}}</td>
 				<td><button @click="del(index)">操作</button></td>

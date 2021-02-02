@@ -9,19 +9,43 @@
 			<button>提交</button>
 			<button>全部删除</button>
 		</div>
-		<table>
-			<tr>
-				<th>编号</th>
-				<th>名称</th>
-				<th>时间</th>
-				<th>操作</th>
-			</tr>
-			<tr>
-				<td>0</td>
-				<td>第一条信息</td>
-				<td>05/15</td>
-				<td><button>操作</button></td>
-			</tr>
-		</table>
+
+		<ctable></ctable>
 	</div>
 </template>
+<script>
+	import ctable from "./ctable"
+
+	export default {
+		components:{
+			ctable
+		},
+		data(){
+			return {
+				nameValue:"",
+				timeValue:"",
+				isActive:false,
+				color:"红",
+				list:[
+					{
+						nameValue:"3",
+						timeValue:"ffdf"
+					},
+					{
+						nameValue:"4",
+						timeValue:"ggggg"
+					},
+					{
+						nameValue:"5",
+						timeValue:"jjjjj"
+					}
+				],
+			}
+		},
+		methods:{
+		// 	submit:function(){
+		// console.log(1)
+		// 	},
+		}
+	}
+</script>
